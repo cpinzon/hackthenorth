@@ -15,6 +15,7 @@ Gulp is open source and can be found on [GitHub](https://github.com/gulpjs/gulp/
   * Open a terminal window and navigate to the root project directory
   * Install the project dependencies
   	* run: `npm install`
+  	* run: `bower install`
   * Start the local server
   	* run: `gulp build`
     
