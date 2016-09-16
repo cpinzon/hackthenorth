@@ -1,0 +1,53 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+// as per http://susydocs.oddbird.net/en/latest/toolkit/#global-box-sizing
+html { box-sizing: border-box; }
+* { box-sizing: inherit; }
+
+// Reset fonts for relevant elements
+// Select reset won't work for webkit browsers.
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: 0;
+}
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+ul,
+li {
+  list-style-type: none;
+}
+// Images
+img {
+  vertical-align: middle;
+}
+// iOS "clickable elements" fix for role="button"
+[role="button"] {
+  cursor: pointer;
+}
+// Reset Links
+a {
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}

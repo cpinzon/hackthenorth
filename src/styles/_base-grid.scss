@@ -1,0 +1,47 @@
+@import "../../../../bower_components/susy/sass/susy";
+@import "../../../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+// Global susy config defaults
+$susy: ( columns: 12,
+        gutters: 1/8,
+        gutter-position: after,
+        global-box-sizing: border-box
+);
+
+.container {
+  @include container;
+}
+
+@include clearfix("clearfix");
+
+[class*='col-'] {
+  @include span(1 of 12);
+  position: relative;
+  min-height: 1px;
+}
+
+.col-1{ @include span(1 of 12); }
+.col-2{ @include span(2 of 12); }
+.col-3{ @include span(3 of 12); }
+.col-4{ @include span(4 of 12); }
+.col-5{ @include span(5 of 12); }
+.col-6{ @include span(6 of 12); }
+.col-7{ @include span(7 of 12); }
+.col-8{ @include span(8 of 12); }
+.col-9{ @include span(9 of 12); }
+.col-10{ @include span(10 of 12); }
+.col-11{ @include span(11 of 12); }
+.col-12{ @include span(12 of 12); }
+
+.col-1-last { @include span(1 of 12 last); }
+.col-2-last { @include span(2 of 12 last); }
+.col-3-last { @include span(3 of 12 last); }
+.col-4-last { @include span(4 of 12 last); }
+.col-5-last { @include span(5 of 12 last); }
+.col-6-last { @include span(6 of 12 last); }
+.col-7-last { @include span(7 of 12 last); }
+.col-8-last { @include span(8 of 12 last); }
+.col-9-last { @include span(9 of 12 last); }
+.col-10-last { @include span(10 of 12 last); }
+.col-11-last { @include span(11 of 12 last); }
+.col-12-last { @include span(12 of 12 last); }

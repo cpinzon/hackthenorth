@@ -1,0 +1,52 @@
+// Config
+$elementSeparator: ‘__’;
+$modifierSeparator: ‘--’;
+$selector: '&';
+$base__font-size: 16;
+
+// Function for calculating rem sizes:
+@function calc-rem($target, $context: $base__font-size) {
+  @return ($target / $context) * 1rem;
+}
+
+// Text mixin
+@mixin text($size, $line, $family) {
+  font-size: calc-rem($size);
+  line-height: ($line/$size);
+  font-family: $family;
+}
+
+// BEM helpers
+/// Block Element
+/// @param {String} $element - Element's name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// Block Modifier
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Icon mixin
+@mixin icon($content, $position:"") {
+  @if $position == "" {
+    @extend %icon;
+    content: $content;
+  } @else if $position == before {
+    &:before {
+      @extend %icon;
+      content: $content;
+    }
+  } @else if $position == after {
+    &:after {
+      @extend %icon;
+      content: $content;
+    }
+  }
+}
