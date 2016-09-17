@@ -35,4 +35,4 @@ All flux/js react files are organized into the following directories:
         * `constants/`   <- Just some constants that we'll use elsewhere
         * `dispatcher/`  <- Flux Dispatcher
         * `models/`      <- Keep empty models here
-        * `stores/`      <- Flux Stores - basically ALL the business logic
+        * `stores/`      <- Flux Stores - all business logic is stored and acted upon here

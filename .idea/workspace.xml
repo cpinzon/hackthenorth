@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ce0b22-2d28-4bc2-bf72-88177bf20261" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/actions/CartActions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/actions/CategoryActions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/cart/Cart.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/cart/CartFooter.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/cart/CartHeader.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/cart/CartList.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/cart/CartListItem.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/products/Product.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/products/ProductActions.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/products/ProductDisplay.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/components/products/ProductGrid.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/constants/ProductConstants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/models/CartProductModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/models/ProductModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/services/LoblawDigitalService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/stores/BaseStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/stores/CartStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/stores/ProductStore.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/default.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/components/App.jsx" afterPath="$PROJECT_DIR$/src/scripts/components/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/main.jsx" afterPath="$PROJECT_DIR$/src/scripts/main.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/_mixins.scss" afterPath="$PROJECT_DIR$/src/styles/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="hackthenorth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,13 +35,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0933126">
+            <state vertical-scroll-proportion="-2.2222223">
               <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.87479675">
+                <caret line="37" column="90" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -173,7 +165,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/bower.json" />
         <option value="$PROJECT_DIR$/src/styles/main.scss" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/styles/_base-grid.scss" />
         <option value="$PROJECT_DIR$/src/.gitignore" />
         <option value="$PROJECT_DIR$/src/index.html" />
@@ -202,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/scripts/components/products/ProductActions.jsx" />
         <option value="$PROJECT_DIR$/src/scripts/actions/CartActions.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -871,12 +863,12 @@
       <workItem from="1474016375795" duration="15000" />
       <workItem from="1474034247306" duration="2645000" />
       <workItem from="1474044661706" duration="7182000" />
-      <workItem from="1474077587494" duration="5758000" />
+      <workItem from="1474077587494" duration="5837000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15600000" />
+    <option name="totallyTimeSpent" value="15679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="720" height="841" extended-state="0" />
@@ -1016,6 +1008,7 @@
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.0">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1064,22 +1057,6 @@
         <state vertical-scroll-proportion="-9.375">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.5078125">
-            <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -1274,10 +1251,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0933126">
+        <state vertical-scroll-proportion="-2.2222223">
           <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.87479675">
+            <caret line="37" column="90" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
