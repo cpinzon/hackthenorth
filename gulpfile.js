@@ -9,7 +9,6 @@ var reload = browserSync.reload;
 var historyApiFallback = require('connect-history-api-fallback');
 var source = require('vinyl-source-stream');
 var runSequence = require('run-sequence');
-var configify = require('config-browserify');
 var replace = require('gulp-replace-task');
 
 // Load plugins
@@ -19,7 +18,7 @@ var watchify = require('watchify');
 var browserifyConfig = {
 	'entries': ['./src/scripts/main.jsx'],
 	'extensions': ['.js','.jsx'],
-	'transform': ['babelify', configify], //presets in .babelrc
+	'transform': ['babelify'], //presets in .babelrc
 	'debug': true,
 	'insertGlobals': true,
 	'cache': {},
@@ -135,7 +134,7 @@ gulp.task('watch', function() {
 // ------------------------
 
 // Developer Task
-gulp.task('build:dev', function() {
+gulp.task('build', function() {
 	runSequence(
 		['bower'],
 		['styles', 'scripts'],

@@ -1,8 +1,7 @@
 /node_modules/
 /bower_components/
-/dist/
+/build/
 .sass-cache/
 .DS_Store
-/src/scripts/components/imported-styleguide/*
 npm-debug.log
 

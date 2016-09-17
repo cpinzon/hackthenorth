@@ -50,3 +50,15 @@ $base__font-size: 16;
     }
   }
 }
+
+// Clearfix mixin
+// http://blog.teamtreehouse.com/a-better-clearfix-with-sass
+@mixin clearfix($classname) {
+  /*-- our cleafix hack -- */
+  .#{$classname}:before,
+  .#{$classname}:after {
+    content:"";
+    display: table;
+    clear: both;
+  }
+}

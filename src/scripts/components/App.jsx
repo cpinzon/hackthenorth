@@ -1,31 +1,67 @@
 import React from 'react';
-import {Link, IndexLink} from 'react-router';
-import autobind from 'autobind-decorator';
-import config from 'config';
-import {metrics} from 'react-metrics';
 import classNames from 'classnames';
+import Cart from './cart/Cart';
+import ProductGrid from './products/ProductGrid';
+import CategoryActions from "../actions/CategoryActions";
 
-@autobind
+import CartStore from "../stores/CartStore";
+import ProductStore from "../stores/ProductStore";
+
+const _getState = () => {
+	return {
+		cart: CartStore.getCart(),
+		products: ProductStore.getProducts()
+	}
+}
+
 class App extends React.Component {
 	constructor(){
 		super();
 
 		this.state = {
-			..._getState(),
+			cart: {
+				cartProducts: [],
+				totalQty: 0,
+				total: 0
+			},
+			products: [
+				{
+					id: '20026740001_KG',
+					name: 'PEARS YA',
+					price: '2.82',
+					image: "https://assets.shop.loblaws.ca/products/20026740001/b1/en/front/20026740001_front_a01.png",
+					cartQty: 0
+				},
+				{
+					id: '20010146001_KG',
+					name: "APPLE CRISPIN",
+					price: '3.73',
+					image: "https://assets.shop.loblaws.ca/products/20010146001/b1/en/front/20010146001_front_a01.png",
+					cartQty: 0
+				},
+				{
+					id: '20002225001_KG',
+					name: "APPLE MCINTOSH ORCH RUN",
+					price: '5.73',
+					image: "https://assets.shop.loblaws.ca/products/20002225001/b1/en/front/20002225001_front_a01.png",
+					cartQty: 0
+				}
+			]
 		};
 	}
 
-	componentDidUpdate() {
-	}
+	//componentWillMount() {
+	//	CategoryActions.getCategoryProducts("LSL001001001001");
+	//}
 
 	componentDidMount() {
-		TranslationStore.addChangeListener(this.handleChange);
-		GlobalNotificationStore.addChangeListener(this.handleChange);
+		CartStore.addChangeListener(this.handleChange);
+		ProductStore.addChangeListener(this.handleChange);
 	}
 
 	componentWillUnmount() {
-		TranslationStore.removeChangeListener(this.handleChange);
-		GlobalNotificationStore.removeChangeListener(this.handleChange);
+		CartStore.removeChangeListener(this.handleChange);
+		ProductStore.removeChangeListener(this.handleChange);
 	}
 
 	handleChange() {
@@ -34,12 +70,15 @@ class App extends React.Component {
 
 	render(){
 		return (
-			<span>
-				<div>
-					{/* pass the translations in to the component provided by the router */}
-					{React.cloneElement(this.props.children, {translations: this.state.translations})}
+			<div className="container">
+				<div className="clearfix">
+					<div className="header">
+						<span className="header__title">Loblaw Digital Sample App</span>
+						<Cart cart={this.state.cart}></Cart>
+					</div>
 				</div>
-			</span>
+				<ProductGrid products={this.state.products}></ProductGrid>
+			</div>
 		)
 	}
 }
