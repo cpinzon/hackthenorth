@@ -14,7 +14,7 @@ class CategoryActions {
                 case 200:
                     Dispatcher.dispatch({
                         actionType: ProductConstants.GET_PRODUCTS_SUCCESS,
-                        payload: { patient: data.body.products }
+                        payload: { products: data.body.products }
                     });
 
                     break;
