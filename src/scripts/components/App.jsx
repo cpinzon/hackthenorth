@@ -3,15 +3,83 @@ import classNames from 'classnames';
 import Cart from './cart/Cart';
 import ProductGrid from './products/ProductGrid';
 import CategoryActions from "../actions/CategoryActions";
+import Dispatcher from '../dispatcher/Dispatcher';
 
 import CartStore from "../stores/CartStore";
 import ProductStore from "../stores/ProductStore";
+
+import Request from 'superagent';
+
+const ProductConstants = {
+    GET_PRODUCTS_REQUEST: 'GET_PRODUCTS_REQUEST',
+    GET_PRODUCTS_SUCCESS: 'GET_PRODUCTS_SUCCESS',
+
+    ADD_TO_CART_REQUEST: 'ADD_TO_CART_REQUEST',
+    ADD_TO_CART_SUCCESS: 'ADD_TO_CART_SUCCESS',
+
+    REMOVE_FROM_CART_REQUEST: 'REMOVE_FROM_CART_REQUEST',
+    REMOVE_FORM_CART_SUCCESS: 'REMOVE_FORM_CART_SUCCESS'
+};
+
+const checkAndHandleResponse = res => {
+	if(res && res.statusCode !== 401) {
+		return true;
+	}
+
+	return false;
+}
+
+const _getRequest = (type = "get", path) => {
+	let request = Request[type](path)
+		.set('Content-Type', 'application/json')
+		.set('Authorization', 'bearer: fd887ce5-7b15-4c1e-93a0-dc91ce883ec6')
+
+	return request;
+}
+
+const _getResolve = (resolve) => {
+	return (err, res) => {
+		if(checkAndHandleResponse(res)) {
+			resolve(res);
+		}
+	}
+}
 
 const _getState = () => {
 	return {
 		cart: CartStore.getCart(),
 		products: ProductStore.getProducts()
 	}
+}
+
+const _loblawDigital = (categoryId) => {
+	let promise = new Promise(
+		function(resolve, reject) {
+			_getRequest("get", `https://www.loblaws.ca/ecommerce/v2/loblaw/categories/${categoryId}/products?filters=promotions:Multi&sort=price`)
+				.end(_getResolve(resolve));
+		}.bind(this)
+	)
+	return promise;
+}
+
+const _getCategoryProducts = (categoryId) => {
+	Dispatcher.dispatch({
+		actionType: ProductConstants.GET_PRODUCTS_REQUEST
+	});
+
+	_loblawDigital(categoryId).then(function(data) {
+		switch(data.statusCode) {
+			case 200:
+				Dispatcher.dispatch({
+					actionType: ProductConstants.GET_PRODUCTS_SUCCESS,
+					payload: { products: data.body.products }
+				});
+
+				break;
+			default:
+			// noop
+		}
+	});
 }
 
 class App extends React.Component {
@@ -50,9 +118,10 @@ class App extends React.Component {
 		};
 	}
 
-	//componentWillMount() {
-	//	CategoryActions.getCategoryProducts("LSL001001001001");
-	//}
+	componentWillMount() {
+		//CategoryActions.getCategoryProducts("LSL001001001001");
+		_getCategoryProducts("LSL001001001001")
+	}
 
 	componentDidMount() {
 		CartStore.addChangeListener(this.handleChange);
